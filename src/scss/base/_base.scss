@@ -1,4 +1,4 @@
-@use './fonts';
+@use "./fonts";
 
 *,
 ::after,
@@ -10,7 +10,22 @@
 
 html,
 body {
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.125rem;
   font-weight: 400;
+}
+
+ul {
+  list-style: none;
+}
+
+.container-lg {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 35px;
 }

@@ -1,0 +1,50 @@
+@use "../utilities/variables" as *;
+
+nav {
+  .container {
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      padding-block: 1.5rem;
+      .logo {
+        line-height: 0;
+        margin-right: 2.25rem;
+      }
+      .nav-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        ul {
+          display: flex;
+          align-items: center;
+          li {
+            font-size: 0.875rem;
+            font-weight: 700;
+            color: $clr-neutral-grayish-violet;
+            &:not(:last-of-type) {
+              margin-right: 2rem;
+            }
+          }
+        }
+        .nav-primary {
+        }
+        .nav-secondary {
+          ul {
+            li {
+              button {
+                &.btn-sign-up {
+                  color: #fff;
+                  font-weight: 700;
+                  background-color: $clr-primary-cyan;
+                  border: none;
+                  border-radius: 100px;
+                  padding: 0.5rem 1.125rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
