@@ -9,12 +9,28 @@ header {
       align-items: center;
       gap: 5rem;
       padding: 5rem 0 10rem 0;
+      @include breakpoint("l") {
+        grid-template-columns: 25rem 1fr;
+      }
+      @include breakpoint("m") {
+        grid-template-columns: 1fr;
+        gap: 0;
+        padding: 2rem 0 10rem 0;
+      }
+
       .copy {
+        @include breakpoint("m") {
+          text-align: center;
+          grid-row: 2;
+        }
         h1 {
           font-size: 4rem;
           line-height: 1.2;
           color: $clr-neutral-very-dark-blue;
           margin-bottom: 1rem;
+          @include breakpoint("m") {
+            font-size: 2.5rem;
+          }
         }
         p {
           color: $clr-neutral-grayish-violet;
@@ -29,6 +45,11 @@ header {
           border: none;
           border-radius: 100px;
           padding: 0.5rem 1.875rem;
+        }
+      }
+      .image {
+        @include breakpoint("m") {
+          display: none;
         }
       }
     }

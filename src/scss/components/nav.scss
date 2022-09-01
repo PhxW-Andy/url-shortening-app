@@ -6,6 +6,12 @@ nav {
       display: grid;
       grid-template-columns: auto 1fr;
       padding-block: 1.5rem;
+
+      @include breakpoint("s") {
+        align-items: center;
+        justify-content: space-between;
+        grid-template-columns: repeat(2, auto);
+      }
       .logo {
         line-height: 0;
         margin-right: 2.25rem;
@@ -14,6 +20,23 @@ nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @include breakpoint("s") {
+          position: absolute;
+          width: calc(100% - 70px);
+          left: 0;
+          right: 0;
+          top: 4rem;
+          margin: auto;
+          padding: 2rem;
+          background-color: $clr-primary-dark-violet;
+          border-radius: 10px;
+          flex-direction: column;
+          align-items: center;
+          display: none;
+        }
+        &.show {
+          display: flex;
+        }
         ul {
           display: flex;
           align-items: center;
@@ -21,18 +44,37 @@ nav {
             font-size: 0.875rem;
             font-weight: 700;
             color: $clr-neutral-grayish-violet;
+            @include breakpoint("s") {
+              font-size: 1rem;
+              color: #fff;
+              margin-bottom: 1rem;
+            }
             &:not(:last-of-type) {
               margin-right: 2rem;
+              @include breakpoint("s") {
+                margin-right: 0;
+              }
             }
           }
         }
         .nav-primary {
+          ul {
+            @include breakpoint("s") {
+              flex-direction: column;
+              align-items: center;
+            }
+          }
         }
         .nav-secondary {
           ul {
+            @include breakpoint("s") {
+              flex-direction: column;
+              align-items: center;
+            }
             li {
               a {
                 &.btn-sign-up {
+                  display: block;
                   color: #fff;
                   font-weight: 700;
                   text-decoration: none;
@@ -42,7 +84,39 @@ nav {
                   padding: 0.5rem 1.125rem;
                 }
               }
+              &:last-of-type {
+                @include breakpoint("s") {
+                  margin-bottom: 0;
+                }
+              }
             }
+          }
+        }
+      }
+      button.toggle {
+        display: none;
+        border: none;
+        box-shadow: none;
+        background: none;
+        position: relative;
+        width: 1.75rem;
+        height: 1rem;
+        cursor: pointer;
+        @include breakpoint("s") {
+          display: block;
+        }
+        span {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 0.2rem;
+          width: 100%;
+          background-color: $clr-neutral-grayish-violet;
+          &:nth-child(2) {
+            top: 50%;
+          }
+          &:nth-child(3) {
+            top: 100%;
           }
         }
       }
