@@ -20,7 +20,9 @@ const Nav = () => {
               <ul>
                 <li>Login</li>
                 <li>
-                  <button className="btn-sign-up">Sign Up</button>
+                  <a href="#" className="btn-sign-up">
+                    Sign Up
+                  </a>
                 </li>
               </ul>
             </div>

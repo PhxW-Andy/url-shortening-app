@@ -1,4 +1,4 @@
-@use "../utilities/variables" as *;
+@use "../utilities" as *;
 
 nav {
   .container {
@@ -31,10 +31,11 @@ nav {
         .nav-secondary {
           ul {
             li {
-              button {
+              a {
                 &.btn-sign-up {
                   color: #fff;
                   font-weight: 700;
+                  text-decoration: none;
                   background-color: $clr-primary-cyan;
                   border: none;
                   border-radius: 100px;

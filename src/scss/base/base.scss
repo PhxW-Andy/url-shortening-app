@@ -13,6 +13,7 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 1.125rem;
   font-weight: 400;
+  background-color: #ececec;
 }
 
 ul {
@@ -22,10 +23,12 @@ ul {
 .container-lg {
   max-width: 1440px;
   margin: 0 auto;
+  overflow-x: hidden;
+  background: #fff;
 }
 
 .container {
-  max-width: 1350px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 35px;
 }

@@ -1,0 +1,105 @@
+@use "../utilities" as *;
+
+.statistics {
+  background-color: #eff1f7;
+  .container {
+    h2 {
+      font-size: 2rem;
+      color: $clr-neutral-very-dark-blue;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    > p {
+      color: $clr-neutral-grayish-violet;
+      font-weight: 500;
+      text-align: center;
+      max-width: 32rem;
+      margin: auto;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 6rem;
+      align-items: flex-start;
+      @include breakpoint("m") {
+        grid-template-columns: 1fr;
+        margin-top: 3rem;
+      }
+      .card {
+        position: relative;
+        padding: 1.875rem;
+        padding-top: 4rem;
+        background-color: #fff;
+        border-radius: 5px;
+        @include breakpoint("m") {
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          margin-top: 3rem !important;
+        }
+        h3 {
+          font-size: 1.25rem;
+          color: $clr-neutral-very-dark-blue;
+          margin-bottom: 1rem;
+        }
+        p {
+          font-size: 0.875rem;
+          color: $clr-neutral-grayish-violet;
+          font-weight: 500;
+        }
+        span {
+          position: absolute;
+          top: 0;
+          transform: translateY(-50%);
+          padding: 1.25rem;
+          background-color: $clr-primary-dark-violet;
+          border-radius: 50%;
+          display: flex;
+          @include breakpoint("m") {
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        &:nth-child(2) {
+          margin-top: 2rem;
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            height: 0.5rem;
+            width: 2rem;
+            background-color: $clr-primary-cyan;
+            top: 40%;
+            @include breakpoint("m") {
+              width: 0.5rem;
+              height: 5rem;
+              left: 50%;
+              top: 0;
+              transform: translate(-50%, 0);
+            }
+          }
+          &::before {
+            left: -2rem;
+            @include breakpoint("m") {
+              left: auto;
+              top: -5rem;
+            }
+          }
+          &::after {
+            right: -2rem;
+            @include breakpoint("m") {
+              top: auto;
+              right: auto;
+              bottom: -5rem;
+            }
+          }
+        }
+        &:nth-child(3) {
+          margin-top: 4rem;
+        }
+      }
+    }
+  }
+}

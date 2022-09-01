@@ -1,0 +1,36 @@
+@use "../utilities" as *;
+
+header {
+  //   background-color: #fff;
+  .container {
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: 31rem 1fr;
+      align-items: center;
+      gap: 5rem;
+      padding: 5rem 0 10rem 0;
+      .copy {
+        h1 {
+          font-size: 4rem;
+          line-height: 1.2;
+          color: $clr-neutral-very-dark-blue;
+          margin-bottom: 1rem;
+        }
+        p {
+          color: $clr-neutral-grayish-violet;
+          font-weight: 500;
+          margin-bottom: 2rem;
+        }
+        a {
+          color: #fff;
+          font-weight: 500;
+          text-decoration: none;
+          background-color: $clr-primary-cyan;
+          border: none;
+          border-radius: 100px;
+          padding: 0.5rem 1.875rem;
+        }
+      }
+    }
+  }
+}

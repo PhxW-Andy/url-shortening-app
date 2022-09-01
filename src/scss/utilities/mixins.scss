@@ -1,0 +1,18 @@
+$breakpoints: (
+  "default": "",
+  "xs": 480px,
+  "s": 667px,
+  "m": 1023px,
+  "l": 1279px,
+  "xl": 1679px,
+);
+
+@mixin breakpoint($breakpoint) {
+  // Es wird gecheckt ob der Wert in der Sass Map vorhanden ist
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Ausgabe
+    @media (max-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+}
