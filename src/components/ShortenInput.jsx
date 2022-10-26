@@ -68,6 +68,9 @@ const ShortenInput = () => {
             className={error ? "error" : ""}
           />
           <button onClick={handleClick}>Shorten It!</button>
+          {error && (
+            <span className="error-link">Please add a correct link...</span>
+          )}
         </div>
         <div className="shorten-links">
           {links.map((link, index) => (

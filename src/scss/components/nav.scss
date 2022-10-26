@@ -5,6 +5,7 @@ nav {
     .content-wrapper {
       display: grid;
       grid-template-columns: auto 1fr;
+      align-items: center;
       padding-block: 1.5rem;
 
       @include breakpoint("s") {
@@ -20,22 +21,26 @@ nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        z-index: 10;
         @include breakpoint("s") {
           position: absolute;
           width: calc(100% - 70px);
           left: 0;
           right: 0;
-          top: 4rem;
+          top: 0;
           margin: auto;
           padding: 2rem;
           background-color: $clr-primary-dark-violet;
           border-radius: 10px;
           flex-direction: column;
           align-items: center;
-          display: none;
+          opacity: 0;
+          transform: translateY(-100%);
+          transition: all 0.3s ease-in-out;
         }
         &.show {
-          display: flex;
+          opacity: 1;
+          transform: translateY(30%);
         }
         ul {
           display: flex;
@@ -112,11 +117,25 @@ nav {
           height: 0.2rem;
           width: 100%;
           background-color: $clr-neutral-grayish-violet;
+          transition: all 0.3s ease-in-out;
           &:nth-child(2) {
             top: 50%;
           }
           &:nth-child(3) {
             top: 100%;
+          }
+        }
+        &.show {
+          span {
+            &:nth-child(1) {
+              transform: rotate(45deg) translate(9px, 9px);
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:nth-child(3) {
+              transform: rotate(-45deg) translate(4px, -4px);
+            }
           }
         }
       }
